@@ -66,6 +66,14 @@ function handleMouseMove(e) {
 function updateColor() {
 	if (oldColor != null && oldColor != "" && oldColor != colorWheel.color.rgbString) {
 		setColor(colorWheel.color.rgb.r, colorWheel.color.rgb.g, colorWheel.color.rgb.b);
+
+		// Dark color
+		if (colorWheel.color.rgb.r + colorWheel.color.rgb.g + colorWheel.color.rgb.b <= 280) {
+			document.querySelector('.on-off-icon').style.color = "white";
+		}
+		else {
+			document.querySelector('.on-off-icon').style.color = "black";
+		}
 	}
 
 	oldColor = colorWheel.color.rgbString;
