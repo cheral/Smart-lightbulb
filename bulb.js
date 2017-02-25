@@ -146,7 +146,7 @@ function toggleButtons() {
 	Array.from(document.querySelectorAll('.color-buttons button')).forEach(function (colorButton) {
 		colorButton.disabled = !turnedOn;
 	});
-	document.querySelector('.mic-button button').disabled = !turnedOn;
+	// document.querySelector('.mic-button button').disabled = !turnedOn;
     turnedOn ? document.querySelector('.wheel').classList.remove('hidden') : document.querySelector('.wheel').classList.add('hidden');
 }
 
