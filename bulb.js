@@ -32,6 +32,15 @@ document.querySelector('.wheel').addEventListener('mousemove', function (e) {
 document.querySelector('.wheel').addEventListener('mouseup', function (e) {
 	handleMouseUp(e);
 }, false);
+document.querySelector('.wheel').addEventListener('touchstart', function (e) {
+	handleMouseDown(e);
+}, false);
+document.querySelector('.wheel').addEventListener('touchmove', function (e) {
+	handleMouseMove(e);
+}, false);
+document.querySelector('.wheel').addEventListener('touchend', function (e) {
+	handleMouseUp(e);
+}, false);
 
 function handleMouseDown(e) {
 
