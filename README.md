@@ -9,7 +9,7 @@ Read about this project in my blog post:
 
 Currently works only with Chrome 53 or newer.
 
-➡ [Online Demo](https://urish.github.io/web-lightbulb)
+➡ [Online Demo](https://sagi363.github.io/smart-lightbulb/)
 
 ## Credit
 > Created by: [urish](https://github.com/urish)
