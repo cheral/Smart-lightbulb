@@ -2,7 +2,7 @@
 
 > Control your [Smart Bluetooth Bulb](http://www.gearbest.com/smart-light-bulb/pp_230349.html) through the Web! 
 
-![image](https://raw.githubusercontent.com/Sagi363/smart-lightbulb/master/image.png  =350x)
+![image](https://raw.githubusercontent.com/Sagi363/smart-lightbulb/master/image.png =350x)
 
 Read about this project in [urish](https://github.com/urish) blog post: 
 
