@@ -1,4 +1,4 @@
-# smart-lightbulb
+# Smart-lightbulb
 
 > Control your [Smart Bluetooth Bulb](http://www.gearbest.com/smart-light-bulb/pp_230349.html) through the Web! 
 
