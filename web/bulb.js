@@ -74,9 +74,13 @@ function onConnected() {
 function connect() {
 	console.log('Requesting Bluetooth Device...');
 	navigator.bluetooth.requestDevice({
-			filters: [{
-				services: [0xffe5]
-			}]
+	filters: [
+    //{services: ['a8b3fff0-4834-4051-89d0-3de95cddd318']},
+   // {services: ['a8b3fff1-4834-4051-89d0-3de95cddd318']},
+    {name: 'BeeWi SmartLite'}] ,
+ optionalServices: ['a8b3fff0-4834-4051-89d0-3de95cddd318']
+//optionalServices: [0x1801]
+	//acceptAllDevices: true		
 		})
 		.then(device => {
 			console.log('> Found ' + device.name);
@@ -85,11 +89,13 @@ function connect() {
 		})
 		.then(server => {
 			console.log('Getting Service 0xffe5 - Light control...');
-			return server.getPrimaryService(0xffe5);
+			return server.getPrimaryService('a8b3fff0-4834-4051-89d0-3de95cddd318');
+// return server.getPrimaryService(0x1801);
 		})
 		.then(service => {
 			console.log('Getting Characteristic 0xffe9 - Light control...');
-			return service.getCharacteristic(0xffe9);
+		return service.getCharacteristic('a8b3fff1-4834-4051-89d0-3de95cddd318');
+	//	return service.getCharacteristic(0x2901);
 		})
 		.then(characteristic => {
 
@@ -142,7 +148,7 @@ function toggleButtons() {
 }
 
 function setColor(red, green, blue) {
-	let data = new Uint8Array([0x56, red, green, blue, 0x00, 0xf0, 0xaa]);
+	let data = new Uint8Array([0x55, 0x13, red, green, blue, 0x0d, 0x0a]);
 	return ledCharacteristic.forEach(led => led.writeValue(data)
 		.catch(err => console.log('Error when writing value! ', err)));
 }
